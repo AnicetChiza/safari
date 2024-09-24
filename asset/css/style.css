@@ -126,7 +126,8 @@ header {
 }
 
 .logo img {
-    width: 70px;
+    width: 80px;
+    filter: invert(1) brightness(2);
 }
 
 .header-list {
@@ -308,7 +309,7 @@ header {
     height: 100%;
     z-index: 2;
     pointer-events: none;
-    background: linear-gradient(to right, #f1f1f1bc 0%, #0e1112da 100%);
+    background: #1b2229f3;
 }
 
 .home-images .home-bg {
