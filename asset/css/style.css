@@ -308,7 +308,7 @@ header {
     height: 100%;
     z-index: 2;
     pointer-events: none;
-    background: #141b1fda;
+    background: linear-gradient(to right, #f1f1f1bc 0%, #0e1112da 100%);
 }
 
 .home-images .home-bg {
