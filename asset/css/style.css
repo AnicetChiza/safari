@@ -1,0 +1,245 @@
+/*---------------------------/
+#Reset
+/-------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+
+/*---------------------------/
+#Title
+/-------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+
+
+/*---------------------------/
+#General
+/-------------------------- */
+
+.title {
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    position: relative;
+    color: #37517e;
+}
+
+.title h2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+}
+
+.title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #1977cc;
+    bottom: 0;
+    left: calc(50% - 20px);
+}
+
+.padding {
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 30px;
+}
+
+.title h2 {
+    font-size: 28px;
+}
+
+
+/* Media query */
+
+@media screen and (max-width: 815px) {
+    .padding {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .padding {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+
+/*---------------------------/
+#Body
+/-------------------------- */
+
+body {
+    font-size: 1rem;
+    color: #141b1fda;
+    font-weight: 600;
+    font-family: "Sulphur Point", sans-serif;
+}
+
+
+/*---------------------------/
+#Header
+/-------------------------- */
+
+header {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    padding: 15px 80px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.header-list {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    -webkit-column-gap: 20px;
+}
+
+.header-list ul {
+    display: flex;
+    gap: 20px;
+    -webkit-column-gap: 20px;
+}
+
+.header-list ul li a {
+    color: #c0c0c0;
+    transition-delay: 0.4s;
+    transition: 0.8s ease-in;
+}
+
+.header-list ul li a:hover {
+    color: #fff;
+}
+
+.header-list ul .acti {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+.exit {
+    display: none;
+}
+
+.menu {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon {
+    font-size: 20px;
+    color: #fff;
+}
+
+.header-color {
+    transition: 1s;
+    background-color: #37517e;
+}
+
+
+/* Media query */
+
+@media screen and (max-width: 815px) {
+    header {
+        padding: 15px 30px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .header-list ul {
+        position: fixed;
+        top: 80px;
+        right: 30px;
+        left: 30px;
+        height: 80vh;
+        display: flex;
+        padding: 40px 40px;
+        flex-direction: column;
+        width: calc(100% - 60px);
+        background-color: #37517e;
+        transform: translateX(-120%);
+        gap: 30px;
+        z-index: 2001;
+        transition: transform 0.3s ease;
+    }
+    .header-list ul.active {
+        transform: translateX(0);
+    }
+    .menu {
+        display: block;
+    }
+    .exit {
+        display: none;
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        cursor: pointer;
+        z-index: 2002;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #37517e;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+    }
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+    }
+    .overlay.active {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    header {
+        padding: 15px 15px;
+    }
+}
