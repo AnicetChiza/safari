@@ -262,7 +262,7 @@ header {
 
 .home-text {
     z-index: 10;
-    width: 70%;
+    width: 60%;
     color: #fff;
     text-align: center;
 }
@@ -271,24 +271,6 @@ header {
     font-size: 2rem;
     margin-bottom: 15px;
     color: #827e59da;
-}
-
-.home-text a {
-    display: flex;
-    margin: auto;
-    color: #fff;
-    margin-top: 15px;
-    width: fit-content;
-    padding: 10px 25px;
-    border-radius: 25px;
-    transition-delay: 0.4s;
-    transition: 0.4s ease-in-out;
-    background-color: #827e59da;
-}
-
-.home-text a:hover {
-    border: 1px solid #e5e5e550;
-    background-color: #141b1fda;
 }
 
 .home-images {
