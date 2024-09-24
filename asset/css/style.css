@@ -168,7 +168,7 @@ header {
 }
 
 .menu-icon {
-    font-size: 20px;
+    font-size: 30px;
     color: #fff;
 }
 
@@ -205,6 +205,13 @@ header {
     }
     .header-list ul.active {
         transform: translateX(0);
+    }
+    .header-list ul .acti {
+        color: #141b1fda;
+        border-bottom: 1px solid #141b1fda;
+    }
+    .header-list ul li a {
+        color: #141b1fda;
     }
     .menu {
         display: block;
@@ -326,4 +333,18 @@ header {
 .circle-btn .circle.act {
     background: #827e59da;
     border: 1px solid #827e59da;
+}
+
+@media screen and (max-width: 970px) {
+    .home-text {
+        width: 80%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .home-text {
+        width: 100%;
+    }
 }
