@@ -376,8 +376,8 @@ header {
     display: flex;
     margin: auto;
     padding: 30px 30px;
-    transform: rotate(10deg) skew(-5deg, -5deg);
-    box-shadow: #00000080 5px 3px, #00000066 10px 6px, #0000004d 15px 9px, #0000004c 20px 12px;
+    transform: rotate(15deg) skew(-10deg, -5deg);
+    box-shadow: #00000040 5px 3px, #00000033 10px 6px, #0000001a 15px 9px, #00000014 20px 12px;
 }
 
 
