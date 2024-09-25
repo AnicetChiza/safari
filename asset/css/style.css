@@ -401,6 +401,12 @@ header {
     }
 }
 
+@media screen and (max-width: 365px) {
+    .about-container {
+        transform: rotate(0deg) skew(-5deg, -5deg);
+    }
+}
+
 
 /*----------------------------/
 #Why to choose us
