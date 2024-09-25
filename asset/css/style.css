@@ -197,7 +197,7 @@ header {
 
 /* Media query */
 
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 980px) {
     header {
         padding: 0px 30px;
     }
@@ -352,7 +352,7 @@ header {
     border: 1px solid #827e59da;
 }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 980px) {
     .home-text {
         width: 80%;
         padding-left: 30px;
