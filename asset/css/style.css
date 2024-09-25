@@ -45,7 +45,7 @@ h6 {
     font-weight: bold;
     padding-bottom: 20px;
     position: relative;
-    color: #827e59da;
+    color: #1b3047da;
 }
 
 .title h2::before {
@@ -65,7 +65,7 @@ h6 {
     display: block;
     width: 40px;
     height: 3px;
-    background: #1977cc;
+    background: #1b3047da;
     bottom: 0;
     left: calc(50% - 20px);
 }
