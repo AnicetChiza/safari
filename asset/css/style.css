@@ -377,7 +377,13 @@ header {
     margin: auto;
     padding: 30px 30px;
     transform: rotate(15deg) skew(-10deg, -5deg);
-    box-shadow: #00000040 5px 3px, #00000033 10px 6px, #0000001a 15px 9px, #00000014 20px 12px;
+    box-shadow: #00000066 5px 3px, #0000004d 10px 6px, #0000004c 15px 9px, #0000004a 20px 12px;
+}
+
+@media screen and (max-width: 950px) {
+    .about-container {
+        width: 90%;
+    }
 }
 
 
