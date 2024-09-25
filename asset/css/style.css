@@ -430,17 +430,19 @@ header {
     transition-delay: 0.4s;
     transition: 0.8s ease-in-out;
     -webkit-column-gap: 20px;
-    box-shadow: 0px 5px 15px #00000017;
-}
-
-.choose-us-item:hover {
     color: #fff;
     background-color: #141b1fda;
 }
 
+.choose-us-item:hover {
+    color: #141b1fda;
+    background-color: #fff;
+    box-shadow: 0px 5px 15px #00000017;
+}
+
 .choose-us-item:hover i {
-    background: unset;
-    box-shadow: unset;
+    color: #141b1fda;
+    box-shadow: 0px 5px 15px #00000017;
 }
 
 .choose-us-item:nth-child(2) {
@@ -463,8 +465,9 @@ header {
     padding: 12px 15px;
     height: fit-content;
     border-radius: 50%;
-    background: #ffffff;
-    box-shadow: 0px 1px 10px #e3e3e3;
+    color: #fff;
+    background: unset;
+    box-shadow: none;
 }
 
 @media screen and (max-width: 1200px) {
