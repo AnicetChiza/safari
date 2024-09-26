@@ -462,8 +462,13 @@ header {
 }
 
 .choose-us-item i {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
     padding: 12px 15px;
-    height: fit-content;
     border-radius: 50%;
     color: #fff;
     background: unset;
@@ -508,6 +513,13 @@ header {
     }
 }
 
+@media screen and (max-width: 380px) {
+    .choose-us-item {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 
 /*----------------------------/
 #Our services
@@ -515,20 +527,21 @@ header {
 
 .service-bloc {
     display: grid;
-    gap: 10px;
-    -webkit-column-gap: 10px;
+    gap: 15px;
+    -webkit-column-gap: 15px;
     grid-template-columns: auto auto;
 }
 
 .service-content {
     padding: 25px 30px;
     transition-delay: 0.4s;
-    transition: 0.8s ease-in-out;
+    transition: 0.8s;
     box-shadow: 0px 1px 10px #e6e6e6;
 }
 
 .service-content:hover {
     color: #fff;
+    transform: translateY(5px);
     background-color: #141b1fda;
 }
 
@@ -555,4 +568,11 @@ header {
 .service-content:hover div i {
     color: #fff;
     box-shadow: none;
+}
+
+@media screen and (max-width: 730px) {
+    .service-bloc {
+        display: grid;
+        grid-template-columns: auto;
+    }
 }
