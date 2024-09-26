@@ -522,7 +522,14 @@ header {
 
 .service-content {
     padding: 25px 30px;
+    transition-delay: 0.4s;
+    transition: 0.8s ease-in-out;
     box-shadow: 0px 1px 10px #e6e6e6;
+}
+
+.service-content:hover {
+    color: #fff;
+    background-color: #141b1fda;
 }
 
 .service-content div {
@@ -543,4 +550,9 @@ header {
     align-items: center;
     justify-content: center;
     box-shadow: 0px 1px 10px #e6e6e6;
+}
+
+.service-content:hover div i {
+    color: #fff;
+    box-shadow: none;
 }
