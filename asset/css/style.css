@@ -507,3 +507,20 @@ header {
         padding-right: 15px;
     }
 }
+
+
+/*----------------------------/
+#Our services
+/----------------------------*/
+
+.service-content {
+    padding: 15px 20px;
+    box-shadow: 0px 1px 10px #e6e6e6;
+}
+
+.service-content div {
+    display: flex;
+    gap: 7px;
+    flex-direction: column;
+    -webkit-column-gap: 7px;
+}
