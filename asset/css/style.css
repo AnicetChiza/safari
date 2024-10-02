@@ -607,7 +607,7 @@ header {
 .faq-question div {
     display: flex;
     gap: 10px;
-    padding-top: 20px;
+    padding-top: 15px;
     padding-bottom: 10px;
     -webkit-column-gap: 10px;
 }
