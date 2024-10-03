@@ -677,31 +677,30 @@ header {
     position: relative;
 }
 
-.testimonial-item {
+.testimonial-item p {
     text-align: center;
 }
 
 .testimonial-item img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.testimonial-item div {
-    width: 70%;
-    margin: auto;
-    margin-top: 10px;
+.profile {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    -webkit-column-gap: 10px;
 }
 
-.testimonial-item div span {
+.testimonial-item span {
     color: #37517e9a;
     font-family: "Sulphur Point", sans-serif;
 }
 
-.testimonial-item div p {
+.testimonial-item p {
     margin-top: 15px;
     font-style: italic;
 }
@@ -744,27 +743,9 @@ header {
     .testimonial-item div {
         width: 100%;
     }
-    button.prev {
-        left: 0px;
-    }
-    button.next {
-        right: 0px;
-    }
 }
 
 @media screen and (max-width: 600px) {
-    button.prev,
-    button.next {
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
-    }
-    .add-testimonial {
-        position: absolute;
-        top: -25px;
-        right: auto;
-        margin-bottom: 20px;
-    }
     .testimonial-content {
         margin-top: 30px;
     }
