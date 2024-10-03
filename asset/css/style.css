@@ -238,7 +238,7 @@ header {
     }
     .exit {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 40px;
         right: 25px;
         cursor: pointer;
