@@ -702,19 +702,18 @@ header {
 }
 
 .testimonial-item span {
-    color: #37517e9a;
+    color: #5a616eae;
     font-family: "Sulphur Point", sans-serif;
 }
 
 .testimonial-item p {
-    margin-top: 15px;
     font-style: italic;
 }
 
 .testimonial-item i {
     font-size: 1.5rem;
     font-style: italic;
-    color: #37517e9a;
+    color: #dde1e7;
 }
 
 .test-btn {
@@ -741,19 +740,16 @@ header {
 
 /* Media query */
 
-@media screen and (max-width: 1050px) {
-    .testimonial-item img {
-        width: 120px;
-        height: 120px;
-    }
-    .testimonial-item div {
+@media screen and (max-width: 880px) {
+    .testimonial-content {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 600px) {
-    .testimonial-content {
-        margin-top: 30px;
+@media screen and (max-width: 500px) {
+    .testimonial-item img {
+        width: 80px;
+        height: 80px;
     }
 }
 
