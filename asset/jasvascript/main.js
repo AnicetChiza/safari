@@ -190,3 +190,39 @@ document.querySelectorAll('.down').forEach(downIcon => {
 document.querySelectorAll('.right').forEach(rightIcon => {
     rightIcon.style.display = 'inline';
 });
+
+/*------------------------------
+#For Testimonials
+/-----------------------------*/
+
+document.addEventListener('DOMContentLoaded', () => {
+    const testimonials = document.querySelectorAll('.testimonial-item');
+    const circles = document.querySelectorAll('.circles');
+    let currentIndex = 0;
+
+    function showItem(index) {
+        testimonials[currentIndex].style.display = 'none';
+        circles[currentIndex].classList.remove('active');
+
+        testimonials[index].style.display = 'block';
+        circles[index].classList.add('active');
+        currentIndex = index;
+    }
+
+    testimonials.forEach((item, index) => {
+        if (index !== currentIndex) {
+            item.style.display = 'none';
+        }
+    });
+
+    circles.forEach((circle, index) => {
+        circle.addEventListener('click', () => {
+            showItem(index);
+        });
+    });
+
+    setInterval(() => {
+        const nextIndex = (currentIndex + 1) % testimonials.length;
+        showItem(nextIndex);
+    }, 9000);
+});
