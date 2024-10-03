@@ -524,6 +524,74 @@ header {
 }
 
 
+/*---------------------------/
+#Newsletter
+/-------------------------- */
+
+.newsletter {
+    width: 100%;
+    color: #fff;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    -webkit-column-gap: 10px;
+    background: linear-gradient(to right, #141b1fea 0%, #dde1e7a7 100%), url(../images/home/email.jpg) fixed top;
+    background-size: cover;
+}
+
+.newsletter div {
+    width: 30%;
+    margin: auto;
+    display: flex;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.newsletter div input {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+    background: unset;
+    font-family: "Sulphur Point", sans-serif;
+}
+
+.newsletter div button {
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background-color: #141b1fea;
+    font-family: "Sulphur Point", sans-serif;
+}
+
+
+/* Media query */
+
+@media screen and (max-width: 1050px) {
+    .newsletter div {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .newsletter div {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .newsletter div {
+        width: 100%;
+    }
+}
+
+
 /*----------------------------/
 #Our services
 /----------------------------*/
