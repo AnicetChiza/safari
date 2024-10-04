@@ -673,6 +673,11 @@ header {
 #Testimonials
 /-------------------------- */
 
+.testimonials {
+    background-color: #f0f0f094;
+    margin-top: 30px;
+}
+
 .testimonial-content {
     width: 70%;
     margin: auto;
