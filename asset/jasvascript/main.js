@@ -234,37 +234,42 @@ document.addEventListener('DOMContentLoaded', () => {
 function createInfiniteScroll(containerId, direction) {
     const container = document.getElementById(containerId);
     const images = Array.from(container.children); // Collect all images
-
     let scrollSpeed = 1; // Speed of scroll
-    let totalWidth = 0; // Accumulate width for proper cloning
+    const totalImages = images.length;
 
-    // Clone images to create a seamless loop
-    images.forEach(image => {
-        const clone = image.cloneNode(true);
-        container.appendChild(clone);
-        totalWidth += image.clientWidth; // Calculate total width of the image set
-    });
+    // Function to clone images for seamless looping
+    const cloneImages = () => {
+        images.forEach(image => {
+            const clone = image.cloneNode(true);
+            container.appendChild(clone);
+        });
+    };
+
+    cloneImages(); // Clone images for smooth infinite scrolling
 
     let currentPosition = 0;
+    let containerWidth = container.scrollWidth / 2; // Total width of the original images
 
     function scrollImages() {
-        // Scroll to the left or right
-        currentPosition += (direction === 'left' ? -scrollSpeed : scrollSpeed);
-
-        // Reset the position when all images have scrolled out of view
-        if (Math.abs(currentPosition) >= totalWidth) {
-            currentPosition = 0;
+        if (direction === 'left') {
+            currentPosition -= scrollSpeed;
+            if (Math.abs(currentPosition) >= containerWidth) {
+                currentPosition = 0; // Reset position when images scroll past
+            }
+        } else if (direction === 'right') {
+            currentPosition += scrollSpeed;
+            if (currentPosition >= containerWidth) {
+                currentPosition = 0; // Reset position when images scroll past
+            }
         }
 
-        // Apply the transform to the container
         container.style.transform = `translateX(${currentPosition}px)`;
-
-        requestAnimationFrame(scrollImages); // Continue the scrolling
+        requestAnimationFrame(scrollImages); // Continue the animation loop
     }
 
     scrollImages(); // Start scrolling
 }
 
 // Initialize the scrolling for both blocks
-createInfiniteScroll('scroll-container1', 'left'); // Left scrolling
-createInfiniteScroll('scroll-container2', 'right'); // Right scrolling
+createInfiniteScroll('scroll-container1', 'left'); // For the first div (scroll left)
+createInfiniteScroll('scroll-container2', 'right'); // For the second div (scroll right)
