@@ -680,22 +680,45 @@ header {
 }
 
 .image-block {
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
-    position: relative;
 }
 
 .image-container {
     display: flex;
-    gap: 0;
-    position: absolute;
-    white-space: nowrap;
+    gap: 10px;
 }
 
 .image-container img {
-    width: 150px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
+}
+
+.block1 .image-container {
+    animation: scroll-left 15s linear infinite;
+}
+
+.block2 .image-container {
+    animation: scroll-right 15s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 
