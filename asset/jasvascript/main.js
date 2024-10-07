@@ -233,39 +233,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createInfiniteScroll(containerId, direction) {
     const container = document.getElementById(containerId);
-    const images = container.children;
+    const images = Array.from(container.children); // Collect all images
+
     let scrollSpeed = 1; // Speed of scroll
+    let totalWidth = 0; // Accumulate width for proper cloning
 
     // Clone images to create a seamless loop
-    for (let i = 0; i < images.length; i++) {
-        const clone = images[i].cloneNode(true);
+    images.forEach(image => {
+        const clone = image.cloneNode(true);
         container.appendChild(clone);
-    }
+        totalWidth += image.clientWidth; // Calculate total width of the image set
+    });
 
-    // Function to handle the infinite scrolling
+    let currentPosition = 0;
+
     function scrollImages() {
-        let currentPosition = container.offsetLeft;
+        // Scroll to the left or right
+        currentPosition += (direction === 'left' ? -scrollSpeed : scrollSpeed);
 
-        if (direction === 'left') {
-            container.style.transform = `translateX(${currentPosition - scrollSpeed}px)`;
-            // Reset position to 0 once the entire set has scrolled off the screen
-            if (container.getBoundingClientRect().right <= 0) {
-                container.style.transform = `translateX(0)`;
-            }
-        } else if (direction === 'right') {
-            container.style.transform = `translateX(${currentPosition + scrollSpeed}px)`;
-            // Reset position once it scrolls off to the right
-            if (container.getBoundingClientRect().left >= window.innerWidth) {
-                container.style.transform = `translateX(0)`;
-            }
+        // Reset the position when all images have scrolled out of view
+        if (Math.abs(currentPosition) >= totalWidth) {
+            currentPosition = 0;
         }
 
-        requestAnimationFrame(scrollImages);
+        // Apply the transform to the container
+        container.style.transform = `translateX(${currentPosition}px)`;
+
+        requestAnimationFrame(scrollImages); // Continue the scrolling
     }
 
-    scrollImages();
+    scrollImages(); // Start scrolling
 }
 
 // Initialize the scrolling for both blocks
-createInfiniteScroll('scroll-container1', 'left');
-createInfiniteScroll('scroll-container2', 'right');
+createInfiniteScroll('scroll-container1', 'left'); // Left scrolling
+createInfiniteScroll('scroll-container2', 'right'); // Right scrolling

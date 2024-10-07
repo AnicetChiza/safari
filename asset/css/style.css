@@ -682,12 +682,15 @@ header {
 .image-block {
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
 .image-container {
     display: flex;
     gap: 0;
-    width: max-content;
+    /* No gap between images */
+    white-space: nowrap;
+    /* Prevent images from wrapping */
 }
 
 .image-container img {
