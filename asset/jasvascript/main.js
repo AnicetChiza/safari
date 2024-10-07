@@ -233,43 +233,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function createInfiniteScroll(containerId, direction) {
     const container = document.getElementById(containerId);
-    const images = Array.from(container.children); // Collect all images
-    let scrollSpeed = 1; // Speed of scroll
-    const totalImages = images.length;
-
-    // Function to clone images for seamless looping
-    const cloneImages = () => {
-        images.forEach(image => {
-            const clone = image.cloneNode(true);
-            container.appendChild(clone);
-        });
-    };
-
-    cloneImages(); // Clone images for smooth infinite scrolling
-
+    const images = Array.from(container.children);
+    const imageWidth = images[0].offsetWidth; // Width of a single image
+    const totalImagesWidth = imageWidth * images.length;
+    const cloneCount = 1; // Number of clones to create
+    let scrollSpeed = 1; // Speed of scrolling
     let currentPosition = 0;
-    let containerWidth = container.scrollWidth / 2; // Total width of the original images
 
+    // Function to clone images
+    function cloneImages() {
+        for (let i = 0; i < cloneCount; i++) {
+            images.forEach(image => {
+                const clone = image.cloneNode(true);
+                container.appendChild(clone);
+            });
+        }
+    }
+
+    cloneImages(); // Clone images once to avoid gaps
+
+    // Function to scroll images
     function scrollImages() {
         if (direction === 'left') {
-            currentPosition -= scrollSpeed;
-            if (Math.abs(currentPosition) >= containerWidth) {
-                currentPosition = 0; // Reset position when images scroll past
+            currentPosition -= scrollSpeed; // Scroll left
+            // Reset position if the entire set has scrolled out
+            if (Math.abs(currentPosition) >= totalImagesWidth) {
+                currentPosition = 0; // Reset position
             }
         } else if (direction === 'right') {
-            currentPosition += scrollSpeed;
-            if (currentPosition >= containerWidth) {
-                currentPosition = 0; // Reset position when images scroll past
+            currentPosition += scrollSpeed; // Scroll right
+            // Reset position if the entire set has scrolled out
+            if (currentPosition >= totalImagesWidth) {
+                currentPosition = 0; // Reset position
             }
         }
 
+        // Apply the transformation for scrolling
         container.style.transform = `translateX(${currentPosition}px)`;
-        requestAnimationFrame(scrollImages); // Continue the animation loop
+        requestAnimationFrame(scrollImages); // Request the next frame
     }
 
     scrollImages(); // Start scrolling
 }
 
 // Initialize the scrolling for both blocks
-createInfiniteScroll('scroll-container1', 'left'); // For the first div (scroll left)
-createInfiniteScroll('scroll-container2', 'right'); // For the second div (scroll right)
+createInfiniteScroll('scroll-container1', 'left'); // For block1
+createInfiniteScroll('scroll-container2', 'left'); // For block2 (change direction if needed)

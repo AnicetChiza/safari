@@ -688,9 +688,7 @@ header {
 .image-container {
     display: flex;
     gap: 0;
-    /* No gap between images */
     white-space: nowrap;
-    /* Prevent images from wrapping */
 }
 
 .image-container img {
