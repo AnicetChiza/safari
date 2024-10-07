@@ -226,3 +226,28 @@ document.addEventListener('DOMContentLoaded', () => {
         showItem(nextIndex);
     }, 9000);
 });
+
+/*------------------------------
+#Visit
+/-----------------------------*/
+const imagesBlock1 = [
+    "../images/home/bg-1.jpg",
+    "../images/home/bg-2.jpg",
+    "../images/home/bg-3.jpg",
+    "../images/home/bg-4.jpg",
+    "../images/home/bg-5.jpg",
+    "../images/home/bg-6.jpg",
+    "../images/home/bg-7.jpg",
+    "../images/home/bbg-1.jpg"
+];
+
+const imagesBloc2 = [
+    "../images/home/bbg-1.jpg",
+    "../images/home/bg-7.jpg",
+    "../images/home/bg-6.jpg",
+    "../images/home/bg-5.jpg",
+    "../images/home/bg-4.jpg",
+    "../images/home/bg-3.jpg",
+    "../images/home/bg-2.jpg",
+    "../images/home/bg-1.jpg"
+];
