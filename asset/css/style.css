@@ -686,39 +686,14 @@ header {
 
 .image-container {
     display: flex;
-    gap: 10px;
+    gap: 0;
+    width: max-content;
 }
 
 .image-container img {
     width: 250px;
     height: 250px;
     object-fit: cover;
-}
-
-.block1 .image-container {
-    animation: scroll-left 15s linear infinite;
-}
-
-.block2 .image-container {
-    animation: scroll-right 15s linear infinite;
-}
-
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes scroll-right {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
 }
 
 

@@ -228,5 +228,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /*------------------------------
-#
+#Visit
 /-----------------------------*/
+
+function createInfiniteScroll(containerId, direction) {
+    const container = document.getElementById(containerId);
+    const images = container.children;
+    let scrollSpeed = 1; // Speed of scroll
+
+    // Clone images to create a seamless loop
+    for (let i = 0; i < images.length; i++) {
+        const clone = images[i].cloneNode(true);
+        container.appendChild(clone);
+    }
+
+    // Function to handle the infinite scrolling
+    function scrollImages() {
+        let currentPosition = container.offsetLeft;
+
+        if (direction === 'left') {
+            container.style.transform = `translateX(${currentPosition - scrollSpeed}px)`;
+            // Reset position to 0 once the entire set has scrolled off the screen
+            if (container.getBoundingClientRect().right <= 0) {
+                container.style.transform = `translateX(0)`;
+            }
+        } else if (direction === 'right') {
+            container.style.transform = `translateX(${currentPosition + scrollSpeed}px)`;
+            // Reset position once it scrolls off to the right
+            if (container.getBoundingClientRect().left >= window.innerWidth) {
+                container.style.transform = `translateX(0)`;
+            }
+        }
+
+        requestAnimationFrame(scrollImages);
+    }
+
+    scrollImages();
+}
+
+// Initialize the scrolling for both blocks
+createInfiniteScroll('scroll-container1', 'left');
+createInfiniteScroll('scroll-container2', 'right');
